@@ -11,12 +11,12 @@ script:
 
 after_success:
  - docker build -t santosh0150/multi-client ./client
- - docker build -t santosh0150/multi-nginx ./nginx
+ - docker build -t santosh0150/multi-ngnix ./ngnix
  - docker build -t santosh0150/multi-server ./server
  - docker build -t santosh0150/multi-worker ./worker
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
  - docker push santosh0150/multi-client
- - docker push santosh0150/multi-nginx
+ - docker push santosh0150/multi-ngnix
  - docker push santosh0150/multi-server
  - docker push santosh0150/multi-worker
 
